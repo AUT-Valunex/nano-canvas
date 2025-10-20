@@ -1,17 +1,19 @@
-# Security Policy
+# 🔒 Security
 
-## Supported Versions
+## Found a Security Issue?
 
-We aim to keep the latest `main` branch and the most recent tagged release of Nano Canvas secure. Please report any vulnerability you discover, even if it affects older versions.
+Please **don't open a public issue**. Instead:
 
-## Reporting a Vulnerability
+1. Email me at **valunex@ik.me** with subject: `SECURITY: [brief description]`
+2. Include:
+   - What the vulnerability is
+   - How to reproduce it
+   - Your suggested fix (if you have one)
 
-1. Email the maintainers at `valunex@ik.me` with the subject line `SECURITY: <short summary>`.
-2. Include detailed reproduction steps, affected versions or commits, and any proof-of-concept code.
-3. If the issue allows remote exploitation, please highlight the potential impact so we can prioritise appropriately.
+I'll respond within **3 business days** and work with you to fix it.
 
-We will acknowledge receipt within **3 business days** and provide a remediation timeline after investigation. Until the fix is released, please do not disclose the vulnerability publicly.
+## Disclosure
 
-## Coordinated Disclosure
+Once fixed, I'll release a patch and credit you (if you want). Please don't share the vulnerability publicly until it's patched.
 
-Once a fix is available, we will publish release notes and credit reporters who wish to be acknowledged. If you run a public deployment of Nano Canvas, subscribe to release notifications so you can patch promptly.
+Thanks for keeping Nano Canvas secure! 🛡️

@@ -1,95 +1,59 @@
-# Contributing to Nano Canvas
+# 🚀 Contributing to Nano Canvas
 
-First off, thank you for considering contributing to Nano Canvas! It's people like you that make open source such a great community.
+Thanks for wanting to contribute! This is my first open-source project, so I appreciate your patience. 💙
 
-We welcome any type of contribution, not just code. You can help with:
+## Ways to Contribute
 
-- **Reporting a bug**
-- **Discussing the current state of the code**
-- **Submitting a fix**
-- **Proposing new features**
-- **Becoming a maintainer**
+- 🐛 Report bugs
+- 💡 Suggest features
+- 📖 Improve documentation
+- 🔧 Submit fixes or enhancements
+- ⭐ Star the repo (honestly, it helps!)
 
-## We Develop with GitHub
+## Quick Start
 
-We use GitHub to host code, to track issues and feature requests, as well as accept pull requests.
+```bash
+# Fork the repo, then:
+git clone https://github.com/YOUR-USERNAME/nano-canvas.git
+cd nano-canvas
+pnpm install
+pnpm dev
+```
 
-## We Use [Github Flow](https://guides.github.com/introduction/flow/index.html), So All Code Changes Happen Through Pull Requests
+## Before You Submit a PR
 
-Pull requests are the best way to propose changes to the codebase. We actively welcome your pull requests:
+- ✅ Run `pnpm lint` (fix any warnings)
+- ✅ Run `pnpm test` (make sure tests pass)
+- ✅ Run `pnpm format` (optional, keeps things tidy)
 
-1.  Fork the repo and create your branch from `main`.
-2.  If you've added code that should be tested, add tests.
-3.  If you've changed APIs, update the documentation.
-4.  Ensure the test suite passes.
-5.  Make sure your code lints.
-6.  Issue that pull request!
+## Pull Request Guidelines
 
-## Any contributions you make will be under the AGPLv3
+1. **Keep PRs focused** - One feature/fix per PR
+2. **Write a clear description** - What changed and why?
+3. **Reference issues** - Use `Fixes #123` if applicable
+4. **Add tests** - If you're adding functionality
+5. **Update docs** - If you're changing behavior
 
-In short, when you submit code changes, your submissions are understood to be under the same [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.en.html) that covers the project. Feel free to contact the maintainers if that's a concern.
+## Code Style
 
-## Report bugs using Github's [issues](https://github.com/AUT-Valunex/nano-canvas/issues)
+We use Prettier and ESLint. Just run `pnpm format` and `pnpm lint` before committing.
 
-We use GitHub Issues to track public bugs. Report a bug by [opening a new issue](https://github.com/AUT-Valunex/nano-canvas/issues/new); it's that easy!
+## Reporting Bugs
 
-## Write bug reports with detail, background, and sample code
-
-**Great Bug Reports** tend to have:
-
-- A quick summary and/or background
+Open an issue and include:
+- What you expected to happen
+- What actually happened
 - Steps to reproduce
-  - Be specific!
-  - Give sample code if you can.
-- What you expected would happen
-- What actually happens
-- Notes (possibly including why you think this might be happening, or stuff you tried that didn't work)
-
-People _love_ thorough bug reports. I'm not even kidding.
-
-## Use a Consistent Coding Style
-
-We use `prettier` and `eslint` to maintain a consistent code style. Please run `pnpm lint` and `pnpm format` before submitting a pull request.
-
-- 2 spaces for indentation (not tabs)
-- Single quotes for strings
-- ...and more, all enforced by `.eslintrc.cjs` and `.prettierrc`.
-
-## Development Setup
-
-1.  Fork the repository and clone it to your local machine.
-2.  Make sure you have Node.js version 18+ and `pnpm` installed.
-3.  Install dependencies:
-    ```bash
-    pnpm install
-    ```
-4.  Start the development server:
-    ```bash
-    pnpm dev
-    ```
-5.  Open `http://localhost:5173` in your browser.
-
-## Before You Push
-
-- Run `pnpm lint` to ensure ESLint passes with zero warnings.
-- Run `pnpm test` to execute the Vitest suite.
-- Update the [CHANGELOG](CHANGELOG.md) when behaviour changes or new features land.
-- Add screenshots or videos for visual tweaks to help reviewers.
-
-## Security Reports
-
-Found a vulnerability? Please follow the [Security Policy](SECURITY.md) and email `valunex@ik.me` instead of opening a public issue.
-
-## Pull Requests
-
-When submitting a pull request, please ensure you:
-
-- Summarise the change and reference any issues (`Fixes #123`).
-- Describe test coverage, including manual QA steps if applicable.
-- Confirm accessibility for new UI states (keyboard navigation, screen readers).
-
-We prefer small, focused PRs. If your change is large, consider breaking it into reviewable chunks or opening a tracking issue first.
+- Browser/OS info (if relevant)
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the GNU AGPLv3 or any later version accepted by the project. Include `NOTICE.md` alongside any redistributed builds or forks.
+By contributing, you agree your code will be licensed under **AGPLv3** (same as the project).
+
+## Questions?
+
+Not sure about something? Open an issue and ask! There are no stupid questions. 🙂
+
+---
+
+**Note**: This is a learning project. Mistakes happen. Let's help each other grow. 🌱
