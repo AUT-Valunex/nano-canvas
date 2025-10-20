@@ -1,0 +1,306 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+
+  /* Surface scale generated from a single neutral hue */
+  --nc-surface-ground: 0.88 0.015 257;
+  --nc-surface-base: 0.92 0.015 257;
+  --nc-surface-raised: 0.96 0.015 257;
+  --nc-surface-floating: 0.99 0.015 257;
+
+  /* Ink scale */
+  --nc-ink-strong: 0.23 0.04 257;
+  --nc-ink: 0.34 0.03 257;
+  --nc-ink-soft: 0.5 0.02 257;
+  --nc-ink-subtle: 0.7 0.015 257;
+
+  /* Accents & feedback using perceptually-uniform OKLCH */
+  --nc-accent: 0.66 0.18 257;
+  --nc-accent-soft: 0.78 0.14 257;
+  --nc-accent-strong: 0.52 0.2 257;
+  --nc-accent-ring: 0.58 0.22 257;
+
+  --nc-success: 0.68 0.15 160;
+  --nc-success-soft: 0.8 0.07 160;
+
+  --nc-warning: 0.78 0.18 75;
+  --nc-warning-soft: 0.9 0.08 75;
+
+  --nc-danger: 0.62 0.23 20;
+  --nc-danger-soft: 0.8 0.12 20;
+
+  /* Border & shadow tokens derived from the palette */
+  --nc-border-subtle: 0.86 0.01 257;
+  --nc-border-base: 0.78 0.015 257;
+  --nc-border-strong: 0.64 0.02 257;
+
+  --nc-shadow-color: 15 23 42;
+  --nc-shadow-ambient: 35 60 120;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --nc-surface-ground: 0.15 0.015 250;
+    --nc-surface-base: 0.2 0.015 250;
+    --nc-surface-raised: 0.26 0.015 250;
+    --nc-surface-floating: 0.32 0.015 250;
+
+    --nc-ink-strong: 0.92 0.01 250;
+    --nc-ink: 0.82 0.015 250;
+    --nc-ink-soft: 0.68 0.02 250;
+    --nc-ink-subtle: 0.56 0.02 250;
+
+    --nc-accent: 0.68 0.18 257;
+    --nc-accent-soft: 0.46 0.07 257;
+    --nc-accent-strong: 0.74 0.21 257;
+    --nc-accent-ring: 0.78 0.19 257;
+
+    --nc-success: 0.72 0.18 160;
+    --nc-success-soft: 0.4 0.05 160;
+
+    --nc-warning: 0.76 0.2 75;
+    --nc-warning-soft: 0.45 0.06 75;
+
+    --nc-danger: 0.68 0.24 20;
+    --nc-danger-soft: 0.46 0.08 20;
+
+    --nc-border-subtle: 0.26 0.01 250;
+    --nc-border-base: 0.33 0.015 250;
+    --nc-border-strong: 0.42 0.02 250;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@layer base {
+  html {
+    font-family:
+      'Plus Jakarta Sans',
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      sans-serif;
+    background-color: oklch(var(--nc-surface-ground));
+    color: oklch(var(--nc-ink));
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: oklch(var(--nc-surface-base));
+  }
+
+  #root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  ::selection {
+    background: oklch(var(--nc-accent));
+    color: oklch(var(--nc-surface-floating));
+  }
+
+  button,
+  input,
+  textarea {
+    font-family: inherit;
+  }
+
+  button,
+  button:focus-visible,
+  button:focus {
+    @apply focus:outline-none;
+  }
+}
+
+@layer utilities {
+  .shadow-highlight {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      0 1px 2px rgba(var(--nc-shadow-color), 0.08);
+  }
+
+  .shadow-press {
+    box-shadow:
+      inset 0 1px 2px rgba(255, 255, 255, 0.08),
+      inset 0 -1px 2px rgba(var(--nc-shadow-color), 0.1);
+  }
+
+  .surface-card {
+    background-color: oklch(var(--nc-surface-raised));
+  }
+
+  .surface-sunken {
+    background-color: oklch(var(--nc-surface-base));
+  }
+
+  .hover-lift {
+    transition:
+      transform 160ms ease,
+      box-shadow 160ms ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-1px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 3px 10px rgba(var(--nc-shadow-color), 0.12);
+  }
+}
+
+/* React Flow overrides expressed via tokens for consistency */
+.react-flow__controls {
+  background: oklch(var(--nc-surface-base) / 0.92);
+  border: 1px solid oklch(var(--nc-border-base));
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(var(--nc-shadow-color), 0.25);
+  backdrop-filter: blur(12px);
+}
+
+.react-flow__controls-button {
+  background: transparent;
+  border: none;
+  color: oklch(var(--nc-ink-soft));
+  transition: all 0.2s ease;
+}
+
+.react-flow__controls-button:hover {
+  background: oklch(var(--nc-surface-floating) / 0.35);
+  color: oklch(var(--nc-ink));
+}
+
+.react-flow__controls-button svg {
+  stroke: currentColor;
+}
+
+.react-flow__minimap {
+  background: oklch(var(--nc-surface-base) / 0.9);
+  border: 1px solid oklch(var(--nc-border-base));
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(var(--nc-shadow-color), 0.28);
+  color: oklch(var(--nc-ink-soft));
+}
+
+.react-flow__minimap-mask {
+  fill: oklch(var(--nc-surface-base) / 0.85);
+}
+
+.react-flow__background {
+  background: oklch(var(--nc-surface-base));
+}
+
+.react-flow__edge-path {
+  stroke: oklch(var(--nc-border-strong));
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: oklch(var(--nc-accent));
+  stroke-width: 3;
+}
+
+.react-flow__handle {
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  border: 2px solid oklch(var(--nc-border-subtle));
+  background: oklch(var(--nc-surface-floating));
+  box-shadow: 0 2px 6px rgba(var(--nc-shadow-color), 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: oklch(var(--nc-ink));
+}
+
+.react-flow__handle::after {
+  content: '';
+  display: block;
+  width: 100%;
+  text-align: center;
+  line-height: 16px;
+}
+
+.react-flow__handle.handle-accent {
+  background: oklch(var(--nc-accent-soft));
+  border-color: oklch(var(--nc-accent));
+  color: oklch(var(--nc-accent-strong));
+}
+
+.react-flow__handle.handle-success {
+  background: oklch(var(--nc-success-soft));
+  border-color: oklch(var(--nc-success));
+  color: oklch(var(--nc-success));
+}
+
+.react-flow__handle.handle-neutral {
+  background: oklch(var(--nc-border-subtle));
+  border-color: oklch(var(--nc-border-base));
+  color: oklch(var(--nc-border-strong));
+}
+
+textarea::-webkit-scrollbar {
+  width: 6px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: oklch(var(--nc-surface-base));
+  border-radius: 999px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: oklch(var(--nc-border-base));
+  border-radius: 999px;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  background: oklch(var(--nc-border-strong));
+}
+
+/* Animated dotted edges for React Flow */
+.react-flow__edge.edge-track .react-flow__edge-path {
+  stroke: oklch(var(--nc-border-base));
+  stroke-width: 2.2;
+  stroke-dasharray: 6 6;
+  animation: edge-dash 8s linear infinite;
+  transition:
+    stroke 0.25s ease,
+    stroke-width 0.25s ease,
+    animation-duration 0.25s ease;
+}
+
+.react-flow__edge.edge-track.edge-idle .react-flow__edge-path {
+  stroke: oklch(var(--nc-border-subtle));
+}
+
+.react-flow__edge.edge-track.edge-processing .react-flow__edge-path {
+  stroke: oklch(var(--nc-accent));
+  stroke-width: 2.8;
+  animation: edge-dash 3s linear infinite;
+}
+
+@keyframes edge-dash {
+  to {
+    stroke-dashoffset: -96;
+  }
+}

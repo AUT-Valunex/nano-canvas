@@ -1,0 +1,43 @@
+name: Feature Request
+description: Suggest an idea that would improve Nano Canvas.
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We love hearing what would make Nano Canvas more useful. Share your idea and the problem it solves so we can evaluate it with the community.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you trying to solve?
+      description: Describe the user need or workflow that is currently painful.
+      placeholder: When I try to…
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Outline your idea. Feel free to include sketches, mockups, or references.
+      placeholder: I would like Nano Canvas to…
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Share any workaround or different approach you explored.
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Links, related issues, or anything else we should know.
+  - type: checkboxes
+    id: involvement
+    attributes:
+      label: Are you willing to help make this happen?
+      options:
+        - label: I can help design the solution
+        - label: I can help implement the feature
+        - label: I can help test and document the feature

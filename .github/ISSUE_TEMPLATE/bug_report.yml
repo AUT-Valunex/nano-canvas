@@ -1,0 +1,72 @@
+name: Bug Report
+description: Tell us about a problem you ran into while using Nano Canvas.
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to help us improve Nano Canvas! Please share as much detail as you can so we can reproduce the issue quickly.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: A concise description of the bug. Screenshots or videos are encouraged.
+      placeholder: Describe the unexpected behaviour…
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Provide a step-by-step recipe that consistently triggers the issue.
+      placeholder: |
+        1. Go to…
+        2. Click…
+        3. Observe…
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: What did you expect to happen instead?
+      placeholder: I expected…
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Nano Canvas version
+      description: Include the commit SHA or tagged release if possible.
+      placeholder: e.g. v1.0.0 or 1a2b3c4
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Browser / Runtime
+      description: Select the environment where the issue appeared.
+      multiple: true
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Node.js
+        - Other (add details below)
+  - type: textarea
+    id: system
+    attributes:
+      label: System details
+      description: OS, device, and any relevant extensions or proxies.
+      placeholder: macOS 14.5 on MacBook Pro, Chrome 125, no extensions
+  - type: textarea
+    id: logs
+    attributes:
+      label: Console logs / network traces
+      description: Paste any relevant logs. Feel free to attach files if they are lengthy.
+      render: shell
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      description: Links to related issues, PRs, or anything else that might help.

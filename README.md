@@ -1,6 +1,9 @@
 <a name="readme-top"></a>
 
 <div align="center">
+  <a href="https://nano-canvas-kappa.vercel.app/" target="_blank" rel="noreferrer">
+    <img src="public/favicon.svg" alt="Nano Canvas" width="120" />
+  </a>
   <h1>🎨 Nano Canvas</h1>
   <p align="center">
     Infinite visual workspaces for AI vision models — drag images, craft prompts, and explore results in one canvas.
@@ -63,7 +66,7 @@ pnpm install
 pnpm dev
 ```
 
-Visit <http://localhost:5173> and click the ⚙️ settings icon to drop in your Google AI API key (get one from [AI Studio](https://makersuite.google.com/app/apikey)).
+Visit <http://localhost:5173> or hop onto the hosted preview at [nano-canvas-kappa.vercel.app](https://nano-canvas-kappa.vercel.app/) and click the ⚙️ settings icon to drop in your Google AI API key (get one from [AI Studio](https://makersuite.google.com/app/apikey)).
 
 ### 🧪 Quality Checklist
 
