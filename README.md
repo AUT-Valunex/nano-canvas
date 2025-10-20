@@ -32,121 +32,89 @@
 
 ---
 
-> Nano Canvas lets you explore vision LLM workflows visually: upload reference images, link prompts, and ship creative pipelines with instant feedback.
+> **Nano Canvas** lets you explore vision LLM workflows visually: upload reference images, link prompts, and see results instantly — all on one infinite canvas.
 
-> **Note:** This is my first open-source release. If you spot something that could be clearer, more secure, or easier to use, please jump in—helping the project grow together is the priority.
+> 💡 **Note:** This is my first open-source project. If you spot something that could be better, please jump in! Learning together is the goal. 🌱
 
 ## ✨ Features
 
 | Experience | AI Workflow | Polish |
 | --- | --- | --- |
-| 🌀 Infinite pan/zoom canvas | 🤖 Google Gemini integration with resilience | 🎯 Guided drag-to-connect interactions |
-| 📷 Drag & drop or paste images | 🧠 Prompt nodes with scale controls & history | ♿ Focus-trapped modals + keyboard navigation |
-| 🔁 Auto-spawn linked nodes during connections | 🔐 Local storage persistence | ☁️ CSP hardened, production-ready setup |
+| 🌀 Infinite pan/zoom canvas | 🤖 Google Gemini vision integration | 🎯 Guided drag-to-connect interactions |
+| 📷 Drag & drop or paste images | 🧠 Prompt nodes with history & scaling | ♿ Keyboard navigation & focus trapping |
+| 🔁 Auto-spawn linked nodes | 🔐 Local storage persistence | ☁️ CSP hardened, production-ready |
 
 ## 🚀 Getting Started
 
-<details>
-<summary><strong>Prerequisites</strong></summary>
-
-- Node.js ≥ 18
-- pnpm (recommended) — or npm/yarn
-
-</details>
+**Prerequisites**: Node.js ≥ 18 and pnpm (or npm/yarn)
 
 ```bash
-# Clone the repo
+# Clone and install
 git clone https://github.com/AUT-Valunex/nano-canvas.git
 cd nano-canvas
-
-# Install dependencies
 pnpm install
 
-# Start the dev server
+# Start developing
 pnpm dev
 ```
 
-Visit <http://localhost:5173> or hop onto the hosted preview at [nano-canvas-kappa.vercel.app](https://nano-canvas-kappa.vercel.app/) and click the ⚙️ settings icon to drop in your Google AI API key (get one from [AI Studio](https://makersuite.google.com/app/apikey)).
+Open [localhost:5173](http://localhost:5173) or try the [live demo](https://nano-canvas-kappa.vercel.app/). Click the ⚙️ icon to add your [Google AI API key](https://makersuite.google.com/app/apikey).
 
-### 🧪 Quality Checklist
-
-```bash
-pnpm lint    # ESLint with zero-warning policy
-pnpm test    # Vitest suites (stores, hooks, components)
-pnpm format  # Prettier formatting (optional)
-```
-
-## 🧑‍💻 Development
+### 🧪 Commands
 
 ```bash
-pnpm install        # install dependencies
-pnpm lint           # enforce ESLint zero-warning policy
-pnpm test           # run the Vitest suite (jsdom environment)
-pnpm build          # type-check and build production artifacts
+pnpm dev       # Start dev server
+pnpm build     # Build for production
+pnpm test      # Run tests
+pnpm lint      # Check code quality
+pnpm format    # Format code (optional)
 ```
-
-During local testing, add your Google AI API key via the in-app settings modal; the OSS build ships without analytics, so nothing is sent to third parties unless you add it in your deployment config.
 
 ## 🧱 Architecture
 
 ```
 src/
-├─ components/
-│  ├─ CanvasSurface.tsx     # React Flow orchestration, MiniMap, toaster
-│  ├─ ImageNode.tsx         # Upload UX with toast-backed error recovery
-│  ├─ PromptNode.tsx        # Prompt lifecycle, scale controls, downloads
-│  ├─ SettingsPanel.tsx     # Focus trapped dialog + inline validation
-│  └─ TopToolbar.tsx        # Status indicator, keyboard-aware actions
-├─ hooks/
-│  └─ useConnection.ts      # Drag indicator + node spawn logic
-├─ services/
-│  └─ imageGenerationService.ts # Google AI client wrapper
-├─ store/
-│  └─ canvasStore.ts        # Zustand canvas state with edge enrichment
-└─ test/                    # Vitest suites covering the full UX
+├─ components/        # React components (Canvas, Nodes, Toolbar, Settings)
+├─ hooks/            # Custom React hooks (connection logic)
+├─ services/         # Google AI integration
+├─ store/            # Zustand state management
+└─ test/             # Vitest test suites
 ```
 
-Key design decisions:
-
-- **Single source of truth** via Zustand — UI components mirror store state to avoid drift.
-- **Connection workflow** isolates gestures (`useConnection`) so React Flow config stays declarative.
-- **Accessibility first** — modals trap focus, buttons expose `aria-label`s, and keyboard shortcuts mirror UI affordances.
-- **Production readiness** — CSP headers, consistent error surfacing, and comprehensive test coverage.
+**Key Design Decisions**:
+- **Zustand** for simple, reactive state management
+- **React Flow** for the infinite canvas experience
+- **Accessibility first** — keyboard shortcuts, focus trapping, ARIA labels
+- **No tracking** — completely private, works offline after first load
 
 ## 🛣️ Roadmap
 
-- [ ] Response streaming for long-running generations
-- [ ] Workspace export/import (JSON + assets)
-- [ ] Multi-provider adapters (OpenAI, Anthropic, etc.)
-- [ ] IndexedDB persistence for images and history
-- [ ] Advanced collaboration (presence, shared cursors)
+- [ ] Response streaming for long generations
+- [ ] Workspace export/import (save your canvases!)
+- [ ] Multi-provider support (OpenAI, Anthropic, etc.)
+- [ ] IndexedDB for persistent image storage
+- [ ] Real-time collaboration (maybe!)
 
-## 📸 Gallery
-
-Screenshots coming soon—share yours in future PRs or discussions!
+Have ideas? [Open an issue](https://github.com/AUT-Valunex/nano-canvas/issues) and let's chat. 💬
 
 ## 🤝 Community
 
-- 📘 Read the [Contributing Guide](docs/CONTRIBUTING.md) before shipping PRs.
-- 🤗 Follow the [Code of Conduct](docs/CODE_OF_CONDUCT.md) — email <valunex@ik.me> for incident reports.
-- 🔐 Review the [Security Policy](docs/SECURITY.md) for responsible disclosure guidelines.
-- 🗓️ Track releases in the [Changelog](docs/CHANGELOG.md).
-- 💬 Share workflows, feedback, or show-and-tell in [discussions](https://github.com/AUT-Valunex/nano-canvas/discussions) *(coming soon)*.
+- 📖 [Contributing Guide](docs/CONTRIBUTING.md) — Help make this better!
+- 🤝 [Code of Conduct](docs/CODE_OF_CONDUCT.md) — Be kind, be respectful
+- 🔒 [Security Policy](docs/SECURITY.md) — Report vulnerabilities privately
+- 📝 [Changelog](docs/CHANGELOG.md) — Track updates and releases
+- 🔧 [Google API Guide](docs/GOOGLE_API.md) — Learn about Gemini's image features
 
 ## 📄 License
 
-Distributed under the GNU Affero General Public License v3.0. See [LICENSE](LICENSE) for details.
+Licensed under **AGPLv3** — see [LICENSE](LICENSE) for details.
 
-### 🌐 Network Source Notice
+**Network Source Notice**: The app includes a "Source & License" link in the footer (required by AGPL §13). Please keep it visible if you deploy your own instance.
 
-AGPL §13 compliance is baked into the app UI: the bottom-left “Source & License · AGPLv3” link surfaces the complete source code for anyone using a hosted instance. Please keep this link visible (or replace it with an equivalent notice) in all deployments.
-
-### 📄 Third-Party Notices
-
-An aggregate `docs/NOTICE.md` is provided to document bundled dependencies. The open-source build ships without telemetry; if you add analytics in your deployment config, update the notice accordingly. Include the file wherever you redistribute Nano Canvas.
+**Third-Party Licenses**: See [docs/NOTICE.md](docs/NOTICE.md) for bundled dependencies.
 
 ---
 
 <p align="center">
-  Built with ❤️ for creative technologists. <a href="#readme-top">Back to top ⬆️</a>
+  Built with ❤️ for creative exploration. <a href="#readme-top">⬆️ Back to top</a>
 </p>
