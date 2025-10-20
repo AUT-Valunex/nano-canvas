@@ -82,7 +82,7 @@ Found a vulnerability? Please follow the [Security Policy](SECURITY.md) and emai
 
 ## Pull Requests
 
-Our [PR template](.github/PULL_REQUEST_TEMPLATE.md) outlines what reviewers expect:
+When submitting a pull request, please ensure you:
 
 - Summarise the change and reference any issues (`Fixes #123`).
 - Describe test coverage, including manual QA steps if applicable.

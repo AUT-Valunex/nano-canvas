@@ -128,5 +128,10 @@ user-settings.json
 # Backup files
 *.bak
 *.backup
+*.zip
+
+# Private dev files
+docs/.devlog.md
+
 .vercel
 run.sh

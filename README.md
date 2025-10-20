@@ -121,8 +121,6 @@ Key design decisions:
 - [ ] IndexedDB persistence for images and history
 - [ ] Advanced collaboration (presence, shared cursors)
 
-Have ideas? [Open a feature request](.github/ISSUE_TEMPLATE/feature_request.yml) or join the discussion in issues.
-
 ## 📸 Gallery
 
 Screenshots coming soon—share yours in future PRs or discussions!
